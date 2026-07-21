@@ -34,10 +34,14 @@ export default function App() {
   // Active Soundscape Mode for Screen-Wide Ambient Visual Sync ('rain', 'forest', 'space', 'none')
   const [activeSoundscape, setActiveSoundscape] = useState('none');
 
-  // Authentication State
+  // Persistent Session Authentication State
   const [user, setUser] = useState(() => {
-    const saved = localStorage.getItem('horizon_user');
-    return saved ? JSON.parse(saved) : null;
+    try {
+      const saved = localStorage.getItem('horizon_user') || localStorage.getItem('lumina_user') || localStorage.getItem('simar_user');
+      return saved ? JSON.parse(saved) : null;
+    } catch {
+      return null;
+    }
   });
 
   const [currentMood, setCurrentMood] = useState('focused');

@@ -144,7 +144,10 @@ export default function AuthScreen({ onLogin }) {
             </div>
             <div>
               <div className="text-xs font-black text-stone-900">Quick Google Account Sign-In</div>
-              <div className="text-[10px] text-stone-500 font-mono">Syncs your real Google Profile Picture to sidebar</div>
+              <div className="text-[10px] text-emerald-700 font-mono font-extrabold flex items-center gap-1 mt-0.5">
+                <Check className="w-3 h-3 text-emerald-600" />
+                <span>Auto-Saved Session: Stay Logged In Permanently</span>
+              </div>
             </div>
           </div>
 
