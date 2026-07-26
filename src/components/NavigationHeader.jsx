@@ -164,9 +164,9 @@ export default function NavigationHeader({
             </div>
 
             <div>
-              <div className="text-xs font-black text-stone-900 leading-tight">{user?.name || 'Kritika S Narayan'}</div>
+              <div className="text-xs font-black text-stone-900 leading-tight">{user?.name || 'Guest Student'}</div>
               <div className="text-[10px] text-stone-500 font-mono truncate max-w-[110px]" title={user?.email}>
-                {user?.email || 'kritika.narayan@gmail.com'}
+                {user?.email || 'guest@university.edu'}
               </div>
               <div className="flex items-center gap-1.5 text-[10px] font-mono mt-0.5">
                 <span className="text-orange-600 font-bold flex items-center gap-0.5">

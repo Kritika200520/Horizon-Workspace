@@ -11,9 +11,9 @@ import {
 
 export default function ResumeBuilder({ user }) {
   const [resumeData, setResumeData] = useState({
-    fullName: user?.name || 'Kritika S. Narayan',
+    fullName: user?.name || 'Guest Student',
     title: 'Computer Science & AI Scholar',
-    email: user?.email || 'kritika@university.edu',
+    email: user?.email || 'student@university.edu',
     phone: '+1 (555) 234-5678',
     education: 'B.S. Computer Science & Artificial Intelligence • GPA 3.9/4.0',
     skills: 'Python, C++, React, Node.js, PyTorch, SQL, Git, Algorithms',

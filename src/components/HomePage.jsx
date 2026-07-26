@@ -44,7 +44,7 @@ export default function HomePage({ user, currentMood, setCurrentMood, onNavigate
           </div>
 
           <h1 className="text-3xl sm:text-4xl font-black text-stone-900 tracking-tight">
-            Welcome back, <span className="gradient-text-warm">{user?.name || 'Kritika'}</span>!
+            Welcome back, <span className="gradient-text-warm">{user?.name || 'Scholar'}</span>!
           </h1>
 
           {/* In-Character Speech Dialogue Bubble */}

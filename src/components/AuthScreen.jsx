@@ -8,9 +8,9 @@ import {
 import StandingCharacterMascot from './StandingCharacterMascot';
 
 export default function AuthScreen({ onLogin }) {
-  const [name, setName] = useState('Kritika S Narayan');
-  const [email, setEmail] = useState('kritika.narayan@gmail.com');
-  const [university, setUniversity] = useState('Stanford University');
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [university, setUniversity] = useState('');
 
   // Fictional Character Avatar State
   const [selectedUniverse, setSelectedUniverse] = useState('One Piece');
@@ -103,14 +103,15 @@ export default function AuthScreen({ onLogin }) {
   };
 
   const handleGoogleLogin = () => {
-    const googleEmail = email.trim() || 'kritika.narayan@gmail.com';
-    const googleName = name.trim() || 'Kritika S Narayan';
+    const googleEmail = email.trim() || 'guest@university.edu';
+    const googleName = name.trim() || 'Guest Scholar';
+    const googleUniversity = university.trim() || 'Horizon Academy';
     const profilePic = getGoogleAvatar(googleEmail);
 
     onLogin({
       name: googleName,
       email: googleEmail,
-      university,
+      university: googleUniversity,
       avatar: profilePic,
       fictionalCharacter: selectedCharacter
     });

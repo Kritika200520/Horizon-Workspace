@@ -18,13 +18,13 @@ export default function CodingGithubTracker({ codingData, onAddChallenge, onDele
   const [showConnectModal, setShowConnectModal] = useState(false);
 
   // GitHub Account State
-  const [githubUsername, setGithubUsername] = useState(() => localStorage.getItem('horizon_github_username') || 'Kritika200520');
-  const [customContribCount, setCustomContribCount] = useState(() => localStorage.getItem('horizon_contrib_count') || '342');
+  const [githubUsername, setGithubUsername] = useState(() => localStorage.getItem('horizon_github_username') || '');
+  const [customContribCount, setCustomContribCount] = useState(() => localStorage.getItem('horizon_contrib_count') || '0');
   const [githubProfile, setGithubProfile] = useState(null);
   const [loadingGithub, setLoadingGithub] = useState(false);
 
   // LeetCode Account State
-  const [leetcodeUsername, setLeetcodeUsername] = useState(() => localStorage.getItem('horizon_leetcode_username') || 'Kritika200520');
+  const [leetcodeUsername, setLeetcodeUsername] = useState(() => localStorage.getItem('horizon_leetcode_username') || '');
 
   const [title, setTitle] = useState('');
   const [difficulty, setDifficulty] = useState('Medium');

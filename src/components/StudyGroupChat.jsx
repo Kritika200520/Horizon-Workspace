@@ -57,7 +57,7 @@ const INITIAL_GROUPS = [
 ];
 
 export default function StudyGroupChat({ user }) {
-  const currentUser = user?.name || 'Kritika S Narayan';
+  const currentUser = user?.name || 'Guest Student';
 
   // Load Contacts & Groups from localStorage
   const [contacts, setContacts] = useState(() => {

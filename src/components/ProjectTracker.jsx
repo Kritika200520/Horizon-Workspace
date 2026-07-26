@@ -15,7 +15,7 @@ export default function ProjectTracker({ projectsData, onAddProject, onUpdatePro
   const [subject, setSubject] = useState('');
   const [status, setStatus] = useState('In Progress');
   const [dueDate, setDueDate] = useState('2026-07-28');
-  const [members, setMembers] = useState('Kritika, Alex, Sophia');
+  const [members, setMembers] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();

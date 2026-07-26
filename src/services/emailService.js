@@ -7,7 +7,16 @@ const DISPATCH_LOG_STORAGE = 'horizon_email_dispatch_log';
 export const getResendApiKey = () => localStorage.getItem(RESEND_KEY_STORAGE) || import.meta.env.VITE_RESEND_API_KEY || '';
 export const setResendApiKey = (key) => localStorage.setItem(RESEND_KEY_STORAGE, key ? key.trim() : '');
 
-export const getUserEmail = () => localStorage.getItem(USER_EMAIL_STORAGE) || 'student@example.com';
+export const getUserEmail = () => {
+  try {
+    const user = localStorage.getItem('horizon_user') || localStorage.getItem('lumina_user') || localStorage.getItem('simar_user');
+    if (user) {
+      const parsed = JSON.parse(user);
+      if (parsed.email) return parsed.email;
+    }
+  } catch (e) {}
+  return localStorage.getItem(USER_EMAIL_STORAGE) || 'student@example.com';
+};
 export const setUserEmail = (email) => localStorage.setItem(USER_EMAIL_STORAGE, email ? email.trim() : '');
 
 export const getDispatchLogs = () => {
@@ -57,7 +66,7 @@ export async function sendEmailReminder({ to, subject, htmlContent, reminderType
           'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-          from: 'Horizon AI <onboarding@resend.dev>',
+          from: 'onboarding@resend.dev',
           to: [recipient],
           subject: subject,
           html: htmlContent

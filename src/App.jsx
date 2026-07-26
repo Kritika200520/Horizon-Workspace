@@ -111,6 +111,8 @@ export default function App() {
   useEffect(() => localStorage.setItem('horizon_exams_data', JSON.stringify(examsData)), [examsData]);
   useEffect(() => localStorage.setItem('horizon_coding_data', JSON.stringify(codingData)), [codingData]);
   useEffect(() => localStorage.setItem('horizon_pomodoro_stats', JSON.stringify(pomodoroStats)), [pomodoroStats]);
+  useEffect(() => localStorage.setItem('horizon_notes_data', JSON.stringify(notesData)), [notesData]);
+  useEffect(() => localStorage.setItem('horizon_ai_result', JSON.stringify(aiResult)), [aiResult]);
 
   const showToast = (msg) => {
     setToastMessage(msg);
